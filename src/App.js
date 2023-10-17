@@ -1,9 +1,8 @@
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">Hello World!</div>
-  );
+  const name = 'Rodica';
+  return <div className="App">{name}</div>;
 }
 
 export default App;
