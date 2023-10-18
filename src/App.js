@@ -1,17 +1,19 @@
 import './App.css';
+import { User } from './User';
 
 function App() {
-  const age = 16;
-  const isGreen = false;
+  const users = [
+    { name: "Diego", age: 21},
+    { name: "Karla", age: 41},
+    { name: "Jake", age: 31}
+  ];
 
   return (
     <div className="App">
-      {age >= 18 ? <h1>Over Age</h1> : <h1>Under Age</h1>}
-      <h1 style={{color: isGreen ? "green" : "red"}}>This Has Color!</h1>
-
-      {isGreen && <button>This Is A Button!</button>}
+      {users.map((user, key) => {
+        return <User name={user.name} age={user.age}/>;
+      })}
     </div>
   );
 };
-
 export default App;
