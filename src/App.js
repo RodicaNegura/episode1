@@ -2,19 +2,27 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const [ textColor, setTextColor] = useState("green");
+  const [ count, setCount] = useState(0);
 
+  const increaseCount = () => {
+    setCount(count + 1); 
+  };
+
+  const decreseCount = () => {
+    setCount(count - 1); 
+  };
+
+  const setToZero = () => {
+    setCount (0);
+  };
  
   return (
     <div className="App">
-      <button 
-        onClick={() => {
-          setTextColor(textColor === "green" ? "red" : "green");
-        }}
-      >
-        Show/Hide
-      </button>
-      <h1 style={{color: textColor}}> Hi My Name is Rodica!</h1>
+      <button onClick={increaseCount}>Increase</button>
+      <button onClick={decreseCount}>Decrease</button>
+      <button onClick={setToZero}>Set To Zero</button>
+
+      {count}
     </div>
   );
 };
