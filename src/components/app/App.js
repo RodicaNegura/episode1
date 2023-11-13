@@ -1,6 +1,7 @@
 import '../../App.css';
 import { useState } from "react";
-import { AppAddTaskButtonStyle, AppAddTaskInputStyle, AppAddTaskStyle, AppStyleList, MainAppStyle } from "../app.style"
+import { AppAddTaskButtonStyle, AppAddTaskInputStyle, AppAddTaskStyle, AppStyleList, MainAppStyle } from "./app.style"
+import User from './user/user.component';
 
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
 
   return (
     <MainAppStyle>
+      <User/>
       <AppAddTaskStyle>
         <AppAddTaskInputStyle onChange={handleChange}/>
         <AppAddTaskButtonStyle onClick={addTask}> Add Task</AppAddTaskButtonStyle>
