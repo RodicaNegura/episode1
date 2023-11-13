@@ -1,5 +1,7 @@
-import './App.css';
+import '../../App.css';
 import { useState } from "react";
+import { AppAddTaskButtonStyle, AppAddTaskInputStyle, AppAddTaskStyle, AppStyleList, MainAppStyle } from "../app.style"
+
 
 function App() {
   const[todoList, setTodoList] = useState([]);
@@ -53,23 +55,26 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className='addTask'>
-        <input onChange={handleChange}/>
-        <button onClick={addTask}> Add Task</button>
-      </div>
-      <div className='list'>
-        {todoList.map((task) => {
-          return (
-            <div className='task' style={{ backgroundColor: task.completed ? "green" : "white"}}> 
-              <h1>{task.taskName}</h1>
-              <button onClick={() => completeTask(task.id)}> Complete </button>
-              <button onClick={() => deleteTask(task.id)}> X </button>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    <MainAppStyle>
+      <AppAddTaskStyle>
+        <AppAddTaskInputStyle onChange={handleChange}/>
+        <AppAddTaskButtonStyle onClick={addTask}> Add Task</AppAddTaskButtonStyle>
+      </AppAddTaskStyle>
+      <AppStyleList>
+        {
+          todoList.map((task) => {
+            return (
+              <div className='task' style={{ backgroundColor: task.completed ? "green" : "white"}}>
+                <button>dawda</button>
+                <button onClick={() => {completeTask(task.id)} }>Verde</button>
+                <button onClick={() => {deleteTask(task.id)}}>Sterge</button>
+              </div>
+            )
+          })
+        }
+        
+      </AppStyleList>
+    </MainAppStyle>
   );
 };
 
